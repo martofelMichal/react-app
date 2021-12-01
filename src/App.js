@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import MainSection from './MainSection/MainSection';
+import Navbar from './Navbar/Navbar';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  active = "Active";
+  inactive = "Inactive";
+
+  state = {
+    username: "majkel",
+    role: "admin",
+    active: true
+  }
+
+  render(){
+    return(
+      <div class="body">
+           <Navbar></Navbar>
+           <MainSection name={this.state.username}></MainSection>
+      </div>
+    )
+  }
 }
+
 
 export default App;
